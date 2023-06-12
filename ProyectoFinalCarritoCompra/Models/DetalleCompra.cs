@@ -10,6 +10,7 @@ namespace ProyectoFinalCarritoCompra.Models
     [Table("DetalleCompra")]
     public class DetalleCompra
     {
+        //asdasdasdadsa
         [Key]
         public int Id { get; set; }
         public int Cantidad { get; set; }
