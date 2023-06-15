@@ -7,20 +7,17 @@ using System.Web;
 
 namespace ProyectoFinalCarritoCompra.Models
 {
-    [Table("Carrito")]
-    public class Carrito
+
+    public class CarritoView
     {
-        [Key]
-        public int Id {get; set; }
         public int Cantidad { get; set; }
 
-        [ForeignKey("ApplicationUser")]
-        public string idUsuario { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        public int Precio { get; set; }
 
-        [ForeignKey("Producto")]
+        public string Producto { get; set; }
+        public string idUsuario { get; set; }
+     
         public int idProducto { get; set; }
-        public virtual Producto Producto { get; set; }
 
     }
 }

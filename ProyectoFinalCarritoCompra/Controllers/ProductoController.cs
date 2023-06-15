@@ -11,6 +11,7 @@ using ProyectoFinalCarritoCompra.Models;
 
 namespace ProyectoFinalCarritoCompra.Controllers
 {
+    //ola esto es una pueba
     public class ProductoController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
