@@ -16,7 +16,7 @@ namespace ProyectoFinalCarritoCompra.Models
         [MaxLength(12, ErrorMessage = "Excede el limite de caracteres.")]
         public string CodBarra { get; set; }
         [Required(ErrorMessage = "Ingrese el nombre del producto")]
-        [MaxLength(25, ErrorMessage = "Excede el limite de caracteres.")]
+        [MaxLength(50, ErrorMessage = "Excede el limite de caracteres.")]
         public string Nombre { get; set; }
 
         [DataType(DataType.MultilineText)]
@@ -31,7 +31,6 @@ namespace ProyectoFinalCarritoCompra.Models
         [Range(0.01, 10000000, ErrorMessage = "El precio debe ser mayor que cero")]
         public decimal Precio { get; set; }
 
-        //La imagen la vamos a guardar como base64
         public string Imagen { get; set; }
 
         [ForeignKey("Marca")]

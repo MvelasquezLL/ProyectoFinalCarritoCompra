@@ -7,9 +7,9 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Nuevo", "Create")
 </p>
-<table class="table">
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Categoria.NombreCat)
@@ -38,38 +38,62 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Categoria.NombreCat)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Marca.NombreMarca)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CodBarra)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Stock)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Precio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Imagen)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria.NombreCat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca.NombreMarca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodBarra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Imagen)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
-</table>
+</table>*@
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="~/Content/imgs/prod/@item.Imagen" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Nombre</h5>
+                    <p class="card-text">@item.Descripcion</p>
+                    <div class="text-center">
+                        <h5 class="card-title">$ @item.Precio</h5>
+                        <a class="btn btn-outline-dark mt-auto" href="#">Añadir al Carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+
+
+
+
+

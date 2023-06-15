@@ -172,6 +172,7 @@
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MarcaController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -183,6 +184,10 @@
     <Compile Include="Migrations\202306081350476_001.cs" />
     <Compile Include="Migrations\202306081350476_001.designer.cs">
       <DependentUpon>202306081350476_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306151922444_002.cs" />
+    <Compile Include="Migrations\202306151922444_002.designer.cs">
+      <DependentUpon>202306151922444_002.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -216,24 +221,26 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Content\imgs\prod\11530235_1.jpg" />
-    <Content Include="Content\imgs\prod\ASUS_ZenBook_Pro_Duo.jpg" />
-    <Content Include="Content\imgs\prod\Bocina portátil Bose SoundLink Revolve+.png" />
-    <Content Include="Content\imgs\prod\Camara_Seguridad_Ring.jpg" />
-    <Content Include="Content\imgs\prod\dell-xps-14-silver-1.jpg" />
-    <Content Include="Content\imgs\prod\dm-01.jpg" />
-    <Content Include="Content\imgs\prod\galaxy_tab_s7-1.jpg" />
-    <Content Include="Content\imgs\prod\Impresora láser HP Color LaserJet Pro MFP M283fdw.png" />
-    <Content Include="Content\imgs\prod\iPhone 14.jpeg" />
-    <Content Include="Content\imgs\prod\iPhone13Pro.jpg" />
-    <Content Include="Content\imgs\prod\Logitech_G_Pro.png" />
-    <Content Include="Content\imgs\prod\logitech_m535.png" />
-    <Content Include="Content\imgs\prod\macbook pro.jpg" />
-    <Content Include="Content\imgs\prod\Mouse inalámbrico Logitech G502.png" />
-    <Content Include="Content\imgs\prod\One_Plus_9.png" />
-    <Content Include="Content\imgs\prod\Shure_AONIC_215.png" />
-    <Content Include="Content\imgs\prod\Smartwatch_Garmin_Forerunner_935.png" />
-    <Content Include="Content\imgs\prod\Smart_TV_LG_OLED_C1.png" />
+    <Content Include="Content\imgs\prod\iPhone 11.jpg" />
+    <Content Include="Content\imgs\prod\iPhone 12 Pro Max.jpg" />
+    <Content Include="Content\imgs\prod\iPhone 12.jpg" />
+    <Content Include="Content\imgs\prod\iPhone 14 Pro.jpg" />
+    <Content Include="Content\imgs\prod\Notebook 14 FHD.jpg" />
+    <Content Include="Content\imgs\prod\Notebook Gamer OMEN.jpg" />
+    <Content Include="Content\imgs\prod\Notebook Gamer ROG Strix G16.jpg" />
+    <Content Include="Content\imgs\prod\Notebook Gamer TUF Dash F15.jpg" />
+    <Content Include="Content\imgs\prod\Notebook Gamer Victus.jpg" />
+    <Content Include="Content\imgs\prod\Notebook Laptop 14 HD.jpg" />
+    <Content Include="Content\imgs\prod\Notebook Vivobook.jpg" />
+    <Content Include="Content\imgs\prod\Notebook X415 14 FHD.jpg" />
+    <Content Include="Content\imgs\prod\Smartphone Galaxy A53.jpg" />
+    <Content Include="Content\imgs\prod\Smartphone Poco M5.jpg" />
+    <Content Include="Content\imgs\prod\Smartphone S21 Fe.jpg" />
+    <Content Include="Content\imgs\prod\Smartphone Xiaomi 12 Lite.jpg" />
+    <Content Include="Content\imgs\prod\Teclado Gamer G213.jpg" />
+    <Content Include="Content\imgs\prod\Teclado Gamer G915.jpg" />
+    <Content Include="Content\imgs\prod\Teclado Gamer HyperX Alloy Origins.jpg" />
+    <Content Include="Content\imgs\prod\Teclado K650.jpg" />
     <Content Include="Content\imgs\stdigital.png" />
     <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
@@ -300,6 +307,11 @@
     <Content Include="Views\Categoria\Details.cshtml" />
     <Content Include="Views\Categoria\Edit.cshtml" />
     <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\Marca\Create.cshtml" />
+    <Content Include="Views\Marca\Delete.cshtml" />
+    <Content Include="Views\Marca\Details.cshtml" />
+    <Content Include="Views\Marca\Edit.cshtml" />
+    <Content Include="Views\Marca\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -337,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306081350476_001.resx">
       <DependentUpon>202306081350476_001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306151922444_002.resx">
+      <DependentUpon>202306151922444_002.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
