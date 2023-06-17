@@ -222,6 +222,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\imgs\back.jpg" />
     <Content Include="Content\imgs\prod\iPhone 11.jpg" />
     <Content Include="Content\imgs\prod\iPhone 12 Pro Max.jpg" />
     <Content Include="Content\imgs\prod\iPhone 12.jpg" />
