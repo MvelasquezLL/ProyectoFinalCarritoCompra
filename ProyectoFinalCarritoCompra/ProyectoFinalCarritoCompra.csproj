@@ -190,6 +190,10 @@
     <Compile Include="Migrations\202306151922444_002.designer.cs">
       <DependentUpon>202306151922444_002.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202306171655088_003.cs" />
+    <Compile Include="Migrations\202306171655088_003.designer.cs">
+      <DependentUpon>202306171655088_003.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Carrito.cs" />
@@ -314,10 +318,10 @@
     <Content Include="Views\Marca\Details.cshtml" />
     <Content Include="Views\Marca\Edit.cshtml" />
     <Content Include="Views\Marca\Index.cshtml" />
+    <Content Include="Views\Carrito\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Carrito\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -355,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306151922444_002.resx">
       <DependentUpon>202306151922444_002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306171655088_003.resx">
+      <DependentUpon>202306171655088_003.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

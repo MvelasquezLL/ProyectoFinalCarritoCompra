@@ -32,7 +32,6 @@ namespace ProyectoFinalCarritoCompra.Models
             return new ApplicationDbContext();
         }
         public DbSet<Producto> Producto { get; set; }
-        public DbSet<Carrito> Carrito { get; set; }
         public DbSet<Categoria> Categoria  { get; set; }
         public DbSet<Ciudad> Ciudad { get; set; }
         public DbSet<Compra> Compra { get; set; }
