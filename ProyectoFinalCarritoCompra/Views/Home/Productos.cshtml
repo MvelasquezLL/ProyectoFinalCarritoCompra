@@ -17,7 +17,20 @@
                     <p class="card-text">@item.Descripcion</p>
                     <div class="text-center">
                         <h5 class="card-title">$ @item.Precio</h5>
-                        <a class="btn btn-outline-dark mt-auto" href="#">Añadir al Carrito</a>
+                        @{
+                            List<int> list = Session["IdProductos"] as List<int>;
+                            bool existe = list.Contains(item.Id);
+
+
+                        }
+                        @if (!existe)
+                        {
+                            <a class="btn btn-outline-dark mt-auto" href="/Home/AddProducto?id=@item.Id">Añadir al Carrito</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-outline-dark mt-auto" href="#">Ir al carrito</a>
+                        }
                     </div>
                 </div>
             </div>
