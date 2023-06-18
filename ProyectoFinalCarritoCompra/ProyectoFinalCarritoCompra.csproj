@@ -227,6 +227,13 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\imgs\back.jpg" />
+    <Content Include="Content\imgs\home\BrandCarousel1 -_2b427fc4.png" />
+    <Content Include="Content\imgs\home\Desktop - CategoryCarousel1 -_c7a43d0e.png" />
+    <Content Include="Content\imgs\home\Desktop - CategoryCarousel7 -__d5a82b70.png" />
+    <Content Include="Content\imgs\home\Desktop_CategoryCarousel1_HomeOffice_07d644c7.png" />
+    <Content Include="Content\imgs\home\Desktop_Celulares.png" />
+    <Content Include="Content\imgs\home\Desktop_Landing_GG-Jun-23_444d1d35.png" />
+    <Content Include="Content\imgs\home\Desktop_Landing_Logitech_Movimiento_Wireless_Mayo_2023_42e7bff8.png" />
     <Content Include="Content\imgs\prod\iPhone 11.jpg" />
     <Content Include="Content\imgs\prod\iPhone 12 Pro Max.jpg" />
     <Content Include="Content\imgs\prod\iPhone 12.jpg" />

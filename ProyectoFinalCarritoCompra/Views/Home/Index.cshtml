@@ -1,33 +1,179 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<br />
+<style>
+    section {
+        display: flex;
+        width: 1360px;
+        height: 430px;
+    }
+
+        section img {
+            width: 0;
+            flex-grow: 1;
+            object-fit: cover;
+            transition: 1s ease;
+        }
+
+            section img:hover {
+                width: 400px;
+                cursor: pointer;
+                opacity: 1;
+                filter: contrast(120%);
+            }
+</style>
 
 <main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-    </section>
-
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div>
+        <section>
+            <img src="~/Content/imgs/home/Desktop - CategoryCarousel7 -__d5a82b70.png">
+            <img src="~/Content/imgs/home/Desktop_CategoryCarousel1_HomeOffice_07d644c7.png">
+            <img src="~/Content/imgs/home/Desktop_Celulares.png">
+            <img src="~/Content/imgs/home/Desktop - CategoryCarousel1 -_c7a43d0e.png">
         </section>
     </div>
+    <div>
+
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="400">
+                                <image href="~/Content/imgs/prod/Notebook Gamer ROG Strix G16.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+                            </svg>
+                            <div class="card-body">
+                                <p class="card-text">Obtén más fotogramas y gana más partidas con el nuevo Strix G16. Prepárate para dominar a todos tus oponentes en cualquier juego con la potencia del procesador</p>
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="400">
+                                <image href="~/Content/imgs/prod/iPhone 14 Pro.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+                            </svg>
+                            <div class="card-body">
+                                <p class="card-text">El iPhone 14 Pro y iPhone 14 Pro Max son resistentes a las salpicaduras, al agua y al polvo, y fueron probados en condiciones de laboratorio controladas, con una clasificación IP68 según la norma IEC 60529</p>
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="400">
+                                    <image href="~/Content/imgs/prod/Teclado Gamer G915.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+                                </svg>
+                                <p class="card-text">
+                                    Un gran avance en diseño e ingeniería. Tecnología inalámbrica LIGHTSPEED de calidad profesional,
+                                    RGB LIGHTSYNC avanzada e interruptores mecánicos de perfil bajo y nivel profesional.
+                                </p>
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <img src="~/Content/imgs/home/Desktop_Landing_Logitech_Movimiento_Wireless_Mayo_2023_42e7bff8.png" width="1248" height="234" />
+        </div>
+
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="400">
+                                    <image href="~/Content/imgs/prod/Teclado Gamer HyperX Alloy Origins.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+                                </svg>
+                                <p class="card-text">HyperX Alloy Origins es ultracompacto y resistente que cuenta con switches mecánicos personalizados para proporcionar a los jugadores la mejor combinación de rendimiento, fiabilidad y estilo.</p>
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="400">
+                                <image href="~/Content/imgs/prod/Smartphone S21 Fe.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+                            </svg>
+
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Galaxy S21 fe,
+                                    Tomamos lo que más te gusta y construimos el
+                                    teléfono más moderno inspirado en los fanáticos
+                                    para que puedas experimentar tus pasiones
+                                    cotidianas al máximo.
+                                </p>
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="400">
+                                <image href="~/Content/imgs/prod/Notebook Gamer TUF Dash F15.jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+                            </svg>
+                            <div class="card-body">
+                                <p class="card-text">El aspecto y las sensaciones del nuevo TUF Dash F15 se definen a través de líneas sencillas. Inspirada en el anime Mecha, la cubierta superior de aluminio está disponible en negro apagado o blanco luz de luna.</p>
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <img src="~/Content/imgs/home/Desktop_Landing_GG-Jun-23_444d1d35.png" width="1248" height="234" />
+        </div>
+
 </main>
