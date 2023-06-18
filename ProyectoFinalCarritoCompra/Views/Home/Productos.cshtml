@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ProyectoFinalCarritoCompra.Models.Producto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="~/Content/imgs/prod/@item.Imagen" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Nombre</h5>
+                    <p class="card-text">@item.Descripcion</p>
+                    <div class="text-center">
+                        <h5 class="card-title">$ @item.Precio</h5>
+                        <a class="btn btn-outline-dark mt-auto" href="#">Añadir al Carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

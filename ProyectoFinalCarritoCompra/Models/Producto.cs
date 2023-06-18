@@ -30,7 +30,7 @@ namespace ProyectoFinalCarritoCompra.Models
         [Required(ErrorMessage = "Ingrese el Precio del Producto")]
         [Range(0.01, 10000000, ErrorMessage = "El precio debe ser mayor que cero")]
         public decimal Precio { get; set; }
-
+        
         public string Imagen { get; set; }
 
         [ForeignKey("Marca")]

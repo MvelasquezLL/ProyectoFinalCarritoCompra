@@ -3,24 +3,31 @@
 @{
     ViewBag.Title = "Details";
 }
+<div class="row">
+    @Html.Partial("_MantenedoresPartial")
+    <div class="col my-2">
+        <div class="card" style="border-radius: 15px; background-color: #1d0b41; color: aliceblue;">
 
-<h2>Details</h2>
+            <div class="card-body">
+                <div class="card-body">
+                    <h2>Detalles de la marca</h2>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.NombreMarca)
+                        </dt>
 
-<div>
-    <h4>Marca</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.NombreMarca)
-        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.NombreMarca)
+                        </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.NombreMarca)
-        </dd>
-
-    </dl>
+                    </dl>
+                </div>
+                <p>
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+                    @Html.ActionLink("Back to List", "Tabla", "Producto")
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

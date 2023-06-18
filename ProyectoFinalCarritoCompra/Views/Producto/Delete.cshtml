@@ -4,85 +4,100 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<div class="row">
+    @Html.Partial("_MantenedoresPartial")
+    <div class="col my-2">
+        <div class="card" style="border-radius: 15px; background-color: #1d0b41; color: aliceblue;">
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Producto</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Categoria.NombreCat)
-        </dt>
+            <div class="card-body">
+                <div class="card-body">
+                    <h2>Borrar producto</h2>
+                    <hr />
+                    <h3>¿Seguro que deseas eliminar este producto?</h3>
+                    <div>
+                        <h4>Producto</h4>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Categoria.NombreCat)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Categoria.NombreCat)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Categoria.NombreCat)
+                            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Marca.NombreMarca)
-        </dt>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Marca.NombreMarca)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Marca.NombreMarca)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Marca.NombreMarca)
+                            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CodBarra)
-        </dt>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.CodBarra)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CodBarra)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.CodBarra)
+                            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Nombre)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Nombre)
+                            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Descripcion)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Descripcion)
+                            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Stock)
-        </dt>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Stock)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Stock)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Stock)
+                            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Precio)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Precio)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Precio)
+                            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </dt>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Imagen)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Imagen)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Imagen)
+                            </dd>
 
-    </dl>
+                        </dl>
+                    </div>
+                </div>
+                <hr />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                    <div class="form-actions no-color">
+                        <div class="col-md-offset-2 col-md-10 my-2 py-2">
+                            <input type="submit" value="Delete" class="btn btn-outline-light btn-lg" />
+                            <a href="@Url.Action("Index","Producto")" class="btn btn-outline-light btn-lg float-end" role="button">Volver</a>
+                        </div>
+                    </div>
+                }
+            </div>
         </div>
-    }
+    </div>
 </div>

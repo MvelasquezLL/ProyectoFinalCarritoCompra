@@ -4,30 +4,38 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="row">
+    @Html.Partial("_MantenedoresPartial")
+    <div class="col">
+        <div class="row justify-content-end my-2">
+            <div class="col-2 text-center">
+                <a href="@Url.Action("Create","Marca")" class="btn btn-outline-primary" role="button">Nuevo</a>
+            </div>
+        </div>
+        
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombreMarca)
+                </th>
+                <th></th>
+            </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NombreMarca)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NombreMarca)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreMarca)
+                    </td>
+                    <td>
+                        <div class='d-grid gap-2 d-md-block'>
+                            <a href="@Url.Action("Edit", "Marca", new { id = item.Id })" style="width: 80px;" class="btn btn-outline-dark" role="button">Editar</a>
+                            <a href="@Url.Action("Details", "Marca", new { id = item.Id })" style="width: 80px;" class="btn btn-outline-dark" role="button">Detalles</a>
+                            <a href="@Url.Action("Delete", "Marca", new { id = item.Id })" style="width: 80px;" class="btn btn-outline-dark" role="button">Borrar</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

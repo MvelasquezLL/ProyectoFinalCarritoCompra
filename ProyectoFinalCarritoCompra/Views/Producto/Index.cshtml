@@ -3,97 +3,119 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Crear Nuevo", "Create")
-</p>
-@*<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Categoria.NombreCat)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Marca.NombreMarca)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CodBarra)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Stock)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Precio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categoria.NombreCat)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Marca.NombreMarca)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodBarra)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Stock)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Imagen)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
-
-</table>*@
 <div class="row">
-    @foreach (var item in Model)
-    {
-        <div class="col-3">
-            <div class="card" style="width: 18rem;">
-                <img src="~/Content/imgs/prod/@item.Imagen" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">@item.Nombre</h5>
-                    <p class="card-text">@item.Descripcion</p>
-                    <div class="text-center">
-                        <h5 class="card-title">$ @item.Precio</h5>
-                        <a class="btn btn-outline-dark mt-auto" href="#">Añadir al Carrito</a>
-                    </div>
-                </div>
+    @Html.Partial("_MantenedoresPartial")
+    <div class="col">
+        <div class="row justify-content-end my-2">
+            <div class="col-2 text-center">
+                <a href="@Url.Action("Create","Producto")" class="btn btn-outline-primary" role="button">Nuevo</a>
             </div>
         </div>
-    }
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Categoria.NombreCat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Marca.NombreMarca)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CodBarra)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Stock)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Imagen)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categoria.NombreCat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Marca.NombreMarca)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CodBarra)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Stock)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Imagen)
+                    </td>
+                    <td>
+                        <div class="d-grid gap-2 d-md-block text-center">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#eliminarModal">
+                                Eliminar
+                            </button>
+                            <a href="@Url.Action("Edit", "Producto", new { id = item.Id })" style="width: 80px;" class="btn btn-outline-dark" role="button">Editar</a>
+                            <a href="@Url.Action("Details", "Producto", new { id = item.Id })" style="width: 80px; " class="btn btn-outline-dark" role="button">Detalles</a>
+                            <a href="@Url.Action("Delete", "Producto", new { id = item.Id })" style="width: 80px; " class="btn btn-outline-dark" role="button">Borrar</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </table>
+
     </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="eliminarModal" tabindex="-1" aria-labelledby="eliminarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="eliminarModalLabel">Eliminar</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Seguro que deseas eliminar esta marca?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+        const exampleModal = document.getElementById('eliminarModal')
+        if (exampleModal) {
+            exampleModal.addEventListener('show.bs.modal', event => {
+                // Button that triggered the modal
+                const button = event.relatedTarget
+                // Extract info from data-bs-* attributes
+                const recipient = button.getAttribute('data-bs-whatever')
+                // If necessary, you could initiate an Ajax request here
+                // and then do the updating in a callback.
 
+                // Update the modal's content.
+                const modalBodyInput = exampleModal.querySelector('.modal-body input')
 
-
-
-
+                modalBodyInput.value = recipient
+            })
+        }
+</script>
