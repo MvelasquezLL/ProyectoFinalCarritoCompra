@@ -3,24 +3,31 @@
 @{
     ViewBag.Title = "Details";
 }
+<div class="row">
+    @Html.Partial("_MantenedoresPartial")
+    <div class="col my-2">
+        <div class="card" style="border-radius: 15px; background-color: #1d0b41; color: aliceblue;">
 
-<h2>Details</h2>
+            <div class="card-body">
+                <div class="card-body">
+                    <h2>Detalles de la categoria</h2>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.NombreCat)
+                        </dt>
 
-<div>
-    <h4>Categoria</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.NombreCat)
-        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.NombreCat)
+                        </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.NombreCat)
-        </dd>
-
-    </dl>
+                    </dl>
+                </div>
+                <div class="col-md-offset-2 col-md-10 my-2 py-2">
+                    <a href="@Url.Action("Edit", "Categoria", new { id = Model.Id })" class="btn btn-outline-light btn-lg float-end" role="button">Editar</a>
+                    <a href="@Url.Action("Index","Categoria")" class="btn btn-outline-light btn-lg" role="button">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

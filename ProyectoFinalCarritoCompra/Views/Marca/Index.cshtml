@@ -28,10 +28,10 @@
                         @Html.DisplayFor(modelItem => item.NombreMarca)
                     </td>
                     <td>
-                        <div class='d-grid gap-2 d-md-block'>
+                        <div class='d-grid gap-2 d-md-block text-center'>
                             <a href="@Url.Action("Edit", "Marca", new { id = item.Id })" style="width: 80px;" class="btn btn-outline-dark" role="button">Editar</a>
                             <a href="@Url.Action("Details", "Marca", new { id = item.Id })" style="width: 80px;" class="btn btn-outline-dark" role="button">Detalles</a>
-                            <a href="@Url.Action("Delete", "Marca", new { id = item.Id })" style="width: 80px;" class="btn btn-outline-dark" role="button">Borrar</a>
+                            <a href="@Url.Action("Delete", "Marca", new { id = item.Id })" style="width: 80px;" class="btn btn-outline-dark" role="button">Eliminar</a>
                         </div>
                     </td>
                 </tr>

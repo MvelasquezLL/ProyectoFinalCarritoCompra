@@ -340,7 +340,6 @@
     <Content Include="Views\Carrito\Index.cshtml" />
     <Content Include="Views\Home\Mantenedores.cshtml" />
     <Content Include="Views\Shared\_MantenedoresPartial.cshtml" />
-    <Content Include="Views\Producto\Tabla.cshtml" />
     <Content Include="Views\Home\Productos.cshtml" />
   </ItemGroup>
   <ItemGroup>

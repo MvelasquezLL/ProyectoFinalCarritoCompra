@@ -25,12 +25,11 @@
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
                     <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    @*@if (1 == 1) <-- aqui insertar logica de roles.
-             {
-                <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li> <- modificar las direcciones.
-                <li>@Html.ActionLink("Acerca de", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li> <- modificar las direcciones.
-            }*@
                     <li>@Html.ActionLink("Productos", "Productos", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    @if (User.IsInRole("Administrador"))
+                    {
+                        <li>@Html.ActionLink("Mantenedores", "Mantenedores", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    }
                 </ul>
                 @{List<int> list = Session["IdProductos"] as List<int>;
                     if (list != null)
@@ -54,7 +53,7 @@
                 }
                 @Html.Partial("_LoginPartial")
             </div>
-            </div>
+        </div>
     </nav>
     <div class="container body-content">
         @RenderBody()
