@@ -1,7 +1,158 @@
-﻿
+﻿@model IEnumerable<ProyectoFinalCarritoCompra.Models.Producto>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="row justify-content-center align-items-center g-2">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-8">
+                    <div class="product-details mr-2">
+                        <div class="d-flex justify-content-between">
+                            <span class="ml-2">Detalle Compra</span>
+                            <a class="btn btn-danger" href="@Url.Action("Index", "Home")">Volver</a>
+                        </div>
+                        <hr class="mt-2 mb-2">
+                        <div class="justify-content-start mb-2">
+                            @{
+                                List<int> list = Session["IdProductos"] as List<int>;
+                                decimal Total = 0;
+                                string mstring = "0";
+                                int cantidad = 0;
+                                if (list != null)
+                                {
+                                    cantidad = list.Count();
+                                }
+                            }
+                            Tienes <span id="cantidad-articulos" class="ml-1">@cantidad</span> artículo(s) en tu carrito
+                        </div>
+                        <div id="productos-seleccionados">
+                            @{
+                                List<ProyectoFinalCarritoCompra.Models.CarritoView> ListaCarrito = new List<ProyectoFinalCarritoCompra.Models.CarritoView>();
+                                ListaCarrito = Session["ListaCarrito"] as List<ProyectoFinalCarritoCompra.Models.CarritoView>;
+                            }
+
+                            @if (ListaCarrito != null)
+                            {
+                                <table class="table table-bordered table-hover text-center">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Precio</th>
+                                            <th scope="col">SubTotal</th>
+                                            <th scope="col">Cantidad</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    @foreach (ProyectoFinalCarritoCompra.Models.CarritoView prod in ListaCarrito)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <img src="~/Content/imgs/prod/@prod.ImgenProducto" width="100" height="110" alt="...">
+                                            </td>
+                                            <td>
+                                                <span>@prod.NombreProducto</span>
+                                            </td>
+                                            <td>
+                                                <span>@prod.Precio.ToString("C")</span>
+                                            </td>
+                                            <td>
+                                                @{
+                                                    decimal sub = prod.Precio * prod.Cantidad;
+
+                                                }
+                                                <span>@sub.ToString("C")</span>
+                                            </td>
+                                            <td>
+                                                <a name='' id='' class='btn btn-primary btn-sm me-2' href='@Url.Action("RestarCantidad", "Carrito", new { id = prod.IdProducto })' role='button'>-</a><span>   @prod.Cantidad   </span><a name='' id='' class='btn btn-primary btn-sm ms-2' href='/Carrito/SumarCantidad?id=@prod.IdProducto' role='button'>+</a>
+                                            </td>
+                                            <td>
+                                                <a name='' id='' class='btn btn-danger btn-sm' href='@Url.Action("EliminarProducto", "Carrito", new { id = prod.IdProducto })' role='button'>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                        <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                                    </svg>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </table>
+                             }
+
+                            </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="payment-info">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>Detalle de Tarjeta</span>
+                                        </div>
+                                        <hr/>
+                                        <span class="type d-block mt-3 mb-1">Tipo de tarjeta</span>
+                                        <label class="radio">
+                                            <input type="radio" name="card" value="payment"
+                                                   checked> <span>
+                                                <img width="60" src="@Url.Content("~/Content/imgs/visa.png")" />
+                                            </span>
+                                        </label>
+                                        <label class="radio ml-2">
+                                            <input type="radio" name="card"
+                                                   value="payment"> <span>
+                                                <img width="60" src="@Url.Content("~/Content/imgs/master.png")" />
+                                            </span>
+                                        </label>
+                                        <div>
+                                            <label class="credit-card-label mb-1 mt-2">
+                                                Nombre del
+                                                Titular
+                                            </label>
+                                            <input type="text" class="form-control credit-inputs"
+                                                   placeholder="Nombre" id="trj_nombre">
+                                        </div>
+                                        <div>
+                                            <label class="credit-card-label mb-1 mt-2">Número de tarjeta</label>
+                                            <input type="text" class="form-control credit-inputs"
+                                                   placeholder="0000 0000 0000 0000" id="trj_numero">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="credit-card-label mb-1 mt-2">Vigencia</label>
+                                                <input type="text" class="form-control credit-inputs"
+                                                       placeholder="12/24" id="trj_vigencia">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="credit-card-label mb-1 mt-2">CVV</label>
+                                                <input type="text" class="form-control credit-inputs"
+                                                       placeholder="342" id="trj_cvv">
+                                            </div>
+                                        </div>
+                                        <hr class="line">
+                                        <div class="d-flex justify-content-between information">
+                                            <span>
+                                                Total a
+                                                Pagar
+                                                @foreach (ProyectoFinalCarritoCompra.Models.CarritoView prod in ListaCarrito)
+                                                {
+                                                    Total = (prod.Precio*prod.Cantidad) + Total;
+                                                    mstring = Total.ToString("C");
+                                                }
+                                            </span><span id="totalPagar">@mstring</span>
+                                        </div>
+                                        <a class="btn btn-primary" href="@Url.Action("PostCompra", "Carrito")">Procesar la compra</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 

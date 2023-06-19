@@ -11,13 +11,10 @@ namespace ProyectoFinalCarritoCompra.Models
     public class CarritoView
     {
         public int Cantidad { get; set; }
-
-        public int Precio { get; set; }
-
-        public string Producto { get; set; }
-        public string idUsuario { get; set; }
-     
-        public int idProducto { get; set; }
+        public int IdProducto { get; set; }
+        public decimal Precio { get; set; }
+        public string ImgenProducto { get; set; }
+        public string NombreProducto { get; set; }
 
     }
 }

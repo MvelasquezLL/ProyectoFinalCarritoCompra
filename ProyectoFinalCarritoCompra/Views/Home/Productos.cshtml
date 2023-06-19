@@ -4,9 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<div class="row">
+<div class="row my-4">
     @foreach (var item in Model)
     {
         <div class="col-3">
@@ -16,7 +14,7 @@
                     <h5 class="card-title">@item.Nombre</h5>
                     <p class="card-text">@item.Descripcion</p>
                     <div class="text-center">
-                        <h5 class="card-title">$ @item.Precio</h5>
+                        <h5 class="card-title">@item.Precio.ToString("C")</h5>
                         @{
                             List<int> list = Session["IdProductos"] as List<int>;
                             bool existe = list.Contains(item.Id);
@@ -29,7 +27,7 @@
                         }
                         else
                         {
-                            <a class="btn btn-outline-dark mt-auto" href="#">Ir al carrito</a>
+                            <a class="btn btn-outline-dark mt-auto" href="/Carrito">Ir al carrito</a>
                         }
                     </div>
                 </div>
