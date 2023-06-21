@@ -3,6 +3,39 @@
 @{
     ViewBag.Title = "Index";
 }
+<div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/Content/imgs/carrusel/ASUS-ROG-Strix-G15-G512LV-HN090T-cabecera.jpg" class="d-block w-100" width="1248" height="450">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/imgs/carrusel/Desktop_Hero_Primus_Mandalorian_Productos_Junio_2023_016239e1.png" class="d-block w-100" width="1248" height="450">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/imgs/carrusel/Desktop_Hero_Zelda_(2)_ad22de20.png" class="d-block w-100" width="1248" height="450">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/imgs/carrusel/1400x350-banner-xiaomi-libres.jpg" class="d-block w-100" width="1248" height="450">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<br />
+
+
 
 <div class="row my-4">
     @foreach (var item in Model)
@@ -34,4 +67,7 @@
             </div>
         </div>
     }
+</div>
+<div class="my-2">
+    <img src="~/Content/imgs/home/Desktop_redragon.png" width="1248" height="234" />
 </div>

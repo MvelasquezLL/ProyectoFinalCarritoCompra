@@ -239,6 +239,13 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\imgs\back.jpg" />
+    <Content Include="Content\imgs\carrusel\1400x350-banner-xiaomi-libres.jpg" />
+    <Content Include="Content\imgs\carrusel\ASUS-ROG-Strix-G15-G512LV-HN090T-cabecera.jpg" />
+    <Content Include="Content\imgs\carrusel\Banner-Asus-productos_3.jpg" />
+    <Content Include="Content\imgs\carrusel\Desktop_Hero_Primus_Mandalorian_Productos_Junio_2023_016239e1.png" />
+    <Content Include="Content\imgs\carrusel\Desktop_Hero_Zelda_%282%29_ad22de20.png" />
+    <Content Include="Content\imgs\carrusel\samsung-banner.jpg" />
+    <Content Include="Content\imgs\Check.gif" />
     <Content Include="Content\imgs\home\BrandCarousel1 -_2b427fc4.png" />
     <Content Include="Content\imgs\home\Desktop - CategoryCarousel1 -_c7a43d0e.png" />
     <Content Include="Content\imgs\home\Desktop - CategoryCarousel7 -__d5a82b70.png" />
@@ -246,6 +253,8 @@
     <Content Include="Content\imgs\home\Desktop_Celulares.png" />
     <Content Include="Content\imgs\home\Desktop_Landing_GG-Jun-23_444d1d35.png" />
     <Content Include="Content\imgs\home\Desktop_Landing_Logitech_Movimiento_Wireless_Mayo_2023_42e7bff8.png" />
+    <Content Include="Content\imgs\home\Desktop_redragon.png" />
+    <Content Include="Content\imgs\master.png" />
     <Content Include="Content\imgs\prod\iPhone 11.jpg" />
     <Content Include="Content\imgs\prod\iPhone 12 Pro Max.jpg" />
     <Content Include="Content\imgs\prod\iPhone 12.jpg" />
@@ -267,6 +276,8 @@
     <Content Include="Content\imgs\prod\Teclado Gamer HyperX Alloy Origins.jpg" />
     <Content Include="Content\imgs\prod\Teclado K650.jpg" />
     <Content Include="Content\imgs\stdigital.png" />
+    <Content Include="Content\imgs\Tarjeta.png" />
+    <Content Include="Content\imgs\visa.png" />
     <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
