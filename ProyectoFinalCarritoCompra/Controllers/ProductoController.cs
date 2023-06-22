@@ -36,6 +36,19 @@ namespace ProyectoFinalCarritoCompra.Controllers
             }
             return View(producto);
         }
+        public async Task<ActionResult> DetalleProducto(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Producto producto = await db.Producto.FindAsync(id);
+            if (producto == null)
+            {
+                return HttpNotFound();
+            }
+            return View(producto);
+        }
 
         // GET: Producto/Create
         public ActionResult Create()

@@ -352,6 +352,7 @@
     <Content Include="Views\Home\Mantenedores.cshtml" />
     <Content Include="Views\Shared\_MantenedoresPartial.cshtml" />
     <Content Include="Views\Home\Productos.cshtml" />
+    <Content Include="Views\Producto\DetalleProducto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
