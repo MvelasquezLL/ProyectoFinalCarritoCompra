@@ -7,6 +7,58 @@
     <img src="~/Content/imgs/Check.gif" />
     <h1 class="display-4 fw-bold text-body-emphasis">Gracias por tu compra</h1>
     <div class="col-lg-6 mx-auto">
+        <div class="product-details mr-2">
+            <div class="d-flex justify-content-between">
+                <span class="ml-2">Detalle Compra</span>
+            </div>
+            <hr class="mt-2 mb-2">
+            <div id="productos-seleccionados">
+                @{
+                    List<ProyectoFinalCarritoCompra.Models.Compra> ListaComp = new List<ProyectoFinalCarritoCompra.Models.Compra>();
+                    ListaComp = Session["ListaPostComp"] as List<ProyectoFinalCarritoCompra.Models.Compra>;
+                    decimal total = 0;
+                }
+
+                @if (ListaComp != null)
+                {
+                    <table class="table table-bordered table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">SubTotal</th>
+                            </tr>
+                        </thead>
+                        @foreach (ProyectoFinalCarritoCompra.Models.Compra prod in ListaComp)
+                        {
+                            <tr>
+                                <td>
+                                    <span>@prod.Nombre</span>
+                                </td>
+                                <td>
+                                    <span>@prod.Precio.ToString("C")</span>
+                                </td>
+                                <td>
+                                    <span>@prod.Cantidad</span>
+                                </td>
+                                <td>
+                                    @{
+                                        decimal sub = prod.Precio * prod.Cantidad;
+                                        total = sub + total;
+                                    }
+                                    <span>@sub.ToString("C")</span>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                    <h3>Total: @total.ToString("C")</h3>
+                }
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Cada pedido cerrado es más una señal de que estamos en el camino bueno. Muchas gracias por su compra.</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
             <a href="@Url.Action("Index", "Home")" role="button" class="btn btn-outline-dark btn-lg px-4 me-sm-3">Volver a la tienda</a>

@@ -353,6 +353,7 @@
     <Content Include="Views\Shared\_MantenedoresPartial.cshtml" />
     <Content Include="Views\Home\Productos.cshtml" />
     <Content Include="Views\Producto\DetalleProducto.cshtml" />
+    <Content Include="Views\Carrito\PostCompra.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

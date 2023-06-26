@@ -109,6 +109,7 @@ namespace ProyectoFinalCarritoCompra.Controllers
         {
             Random rnd = new Random();
             int folio = rnd.Next(1, 10000000);
+            List<Compra> listaPost = new List<Compra>();
             List<CarritoView> Actualista = (List<CarritoView>)HttpContext.Session["ListaCarrito"];
             List<int> lista = (List<int>)HttpContext.Session["IdProductos"];
             foreach (CarritoView item in Actualista)
@@ -128,72 +129,15 @@ namespace ProyectoFinalCarritoCompra.Controllers
                 db.Entry(prod).State = EntityState.Modified;
                 db.Compra.Add(compra);
                 db.SaveChanges();
+                listaPost.Add(compra);
+
             }
             lista.Clear();
             Actualista.Clear();
             HttpContext.Session["ListaCarrito"] = Actualista;
             HttpContext.Session["IdProductos"] = lista;
+            HttpContext.Session["ListaPostComp"] = listaPost;
             return View();
-        }
-
-        // POST: Carrito/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Carrito/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Carrito/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Carrito/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Carrito/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }
