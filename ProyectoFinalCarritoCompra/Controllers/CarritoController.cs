@@ -133,7 +133,7 @@ namespace ProyectoFinalCarritoCompra.Controllers
             Actualista.Clear();
             HttpContext.Session["ListaCarrito"] = Actualista;
             HttpContext.Session["IdProductos"] = lista;
-            return RedirectToAction("Index");
+            return View();
         }
 
         // POST: Carrito/Create
