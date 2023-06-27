@@ -33,42 +33,41 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-<br />
+<div class="album py-5 bg-body-tertiary">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 g-3 mt-2">
+        @foreach (var item in Model)
+        {
+            <div class="col">
+                <div class="card h-100">
+                    <img src="~/Content/imgs/prod/@item.Imagen" class="card-img-top" alt="...">
 
-
-
-<div class="row my-4">
-    @foreach (var item in Model)
-    {
-        <div class="col-3">
-            <div class="card" style="width: 18rem;">
-                <img src="~/Content/imgs/prod/@item.Imagen" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">@item.Nombre</h5>
-                    <p class="card-text">@item.Descripcion</p>
-                    <div class="text-center">
-                        <h5 class="card-title">@item.Precio.ToString("C")</h5>
-                        <a href="@Url.Action("DetalleProducto", "Producto", new { id = item.Id })" style="width: 80px; " class="btn btn-outline-dark" role="button">Ver</a>
-                        @{
-                            List<int> list = Session["IdProductos"] as List<int>;
-                            bool existe = list.Contains(item.Id);
-
-
-                        }
-                        @if (!existe)
-                        {
-                            <a class="btn btn-outline-dark mt-auto" href="/Home/AddProducto?id=@item.Id">Añadir al Carrito</a>
-                        }
-                        else
-                        {
-                            <a class="btn btn-outline-dark mt-auto" href="/Carrito">Ir al carrito</a>
-                        }
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Nombre</h5>
+                        <p class="card-text">@item.Descripcion</p>
+                        <div class="text-center">
+                            <h5 class="card-title">@item.Precio.ToString("C")</h5>
+                            <a href="@Url.Action("DetalleProducto", "Producto", new { id = item.Id })" style="width: 80px; " class="btn btn-outline-dark" role="button">Ver</a>
+                            @{
+                                List<int> list = Session["IdProductos"] as List<int>;
+                                bool existe = list.Contains(item.Id);
+                            }
+                            @if (!existe)
+                            {
+                                <a class="btn btn-outline-dark mt-auto" href="/Home/AddProducto?id=@item.Id">Añadir al Carrito</a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-outline-dark mt-auto" href="/Carrito">Ir al carrito</a>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>
-<div class="my-2">
-    <img src="~/Content/imgs/home/Desktop_redragon.png" width="1248" height="234" />
+
+<div >
+    <img class="img-fluid mb-4" src="~/Content/imgs/home/Desktop_redragon.png" style="width:100%"/>
 </div>
+

@@ -6,12 +6,15 @@
 <div class="row">
     @Html.Partial("_MantenedoresPartial")
     <div class="col">
-        <div class="row justify-content-end my-2">
+        <div class="row mt-4 mb-1">
+            <div class="col-10">
+                <h2>Productos</h2>
+            </div>
             <div class="col-2 text-center">
-                <a href="@Url.Action("Create","Producto")" class="btn btn-outline-primary" role="button">Nuevo</a>
+                <a href="@Url.Action("Create","Producto")" class="btn btn-outline-primary float-end" role="button">Nuevo</a>
             </div>
         </div>
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover table-responsive-sm">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.Categoria.NombreCat)
@@ -69,9 +72,6 @@
                     </td>
                     <td>
                         <div class="d-grid gap-2 d-md-block text-center">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#eliminarModal">
-                                Eliminar
-                            </button>
                             <a href="@Url.Action("Edit", "Producto", new { id = item.Id })" style="width: 80px;" class="btn btn-outline-dark" role="button">Editar</a>
                             <a href="@Url.Action("Details", "Producto", new { id = item.Id })" style="width: 80px; " class="btn btn-outline-dark" role="button">Detalles</a>
                             <a href="@Url.Action("Delete", "Producto", new { id = item.Id })" style="width: 80px; " class="btn btn-outline-dark" role="button">Borrar</a>
@@ -83,6 +83,7 @@
 
     </div>
 </div>
+
 <!-- Modal -->
 <div class="modal fade" id="eliminarModal" tabindex="-1" aria-labelledby="eliminarModalLabel" aria-hidden="true">
     <div class="modal-dialog">

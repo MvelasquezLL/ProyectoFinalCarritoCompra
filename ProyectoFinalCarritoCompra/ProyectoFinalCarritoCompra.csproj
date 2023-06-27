@@ -239,6 +239,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\imgs\back.jpg" />
+    <Content Include="Content\imgs\box.jpg" />
     <Content Include="Content\imgs\carrusel\1400x350-banner-xiaomi-libres.jpg" />
     <Content Include="Content\imgs\carrusel\ASUS-ROG-Strix-G15-G512LV-HN090T-cabecera.jpg" />
     <Content Include="Content\imgs\carrusel\Banner-Asus-productos_3.jpg" />
@@ -255,6 +256,7 @@
     <Content Include="Content\imgs\home\Desktop_Landing_Logitech_Movimiento_Wireless_Mayo_2023_42e7bff8.png" />
     <Content Include="Content\imgs\home\Desktop_redragon.png" />
     <Content Include="Content\imgs\master.png" />
+    <Content Include="Content\imgs\network.jpg" />
     <Content Include="Content\imgs\prod\iPhone 11.jpg" />
     <Content Include="Content\imgs\prod\iPhone 12 Pro Max.jpg" />
     <Content Include="Content\imgs\prod\iPhone 12.jpg" />
@@ -276,6 +278,7 @@
     <Content Include="Content\imgs\prod\Teclado Gamer HyperX Alloy Origins.jpg" />
     <Content Include="Content\imgs\prod\Teclado K650.jpg" />
     <Content Include="Content\imgs\stdigital.png" />
+    <Content Include="Content\imgs\tag.jpg" />
     <Content Include="Content\imgs\Tarjeta.png" />
     <Content Include="Content\imgs\visa.png" />
     <Content Include="Content\styles.css" />
